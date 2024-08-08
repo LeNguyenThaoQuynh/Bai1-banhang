@@ -1,0 +1,12 @@
+<div class="container">
+  <img src="{{ product.imageUrl }}" alt="{{ product.name }}" class="product-img">
+  <div class="product">
+    <h2>{{ product.name }}</h2>
+    <p class="price">{{ product.price | currency:'VND' }}</p>
+    <p class="description">{{ product.description }}</p>
+    <p class="instock">Còn lại: {{ product.inStock }}</p>
+    <button (click)="storeService.addToCart(product)" class="addToCard-button">
+      Thêm vào giỏ
+    </button>
+  </div>
+</div>

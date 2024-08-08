@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="content-container">
+    <!-- Phần thông báo giỏ hàng trống: Hiển thị khi giỏ hàng không có sản phẩm -->
+    <div class="empty-cart-message" *ngIf="cartItems.length === 0">
+      Giỏ hàng của bạn hiện tại đang trống.
+    </div>
+    <!-- Phần giỏ hàng: Hiển thị khi giỏ hàng có sản phẩm -->
+    <div class="cart" *ngIf="cartItems.length > 0">
+
+      <!-- Danh sách sản phẩm trong giỏ hàng -->
+      <div *ngFor="let item of cartItems" class="cart-items">
+        <div class="product-items">
+          <!-- Hình ảnh sản phẩm -->
+          <img [src]="item.product.imageUrl" alt="{{ item.product.name }}">
+          <div>
+            <!-- Tên sản phẩm và thông tin giá -->
+            <h2>{{ item.product.name }}</h2>
+            <p>{{ item.product.price }} VND x {{ item.quantity }}</p>
+          </div>
+        </div>
+
+        <!-- Các nút hành động cho sản phẩm: giảm số lượng, tăng số lượng, và xóa sản phẩm -->
+        <div class="action-button">
+          <button (click)="decreaseQuantity(item.product.id)" class="decrease-button"> - </button>
+          <p>{{ item.quantity }}</p>
+          <button (click)="increaseQuantity(item.product.id)" class="increase-button"> + </button>
+          <button (click)="removeFromCart(item.product.id)" class="remove-button"> Xóa </button>
+        </div>
+      </div>
+
+      <!-- Tổng số tiền của giỏ hàng -->
+      <div class="total">
+        <h2>Tổng cộng:</h2>
+        <p class="total-number">{{ total }} VND</p>
+      </div>
+      <!-- Nút thanh toán -->
+      <button (click)="checkout()" class="checkout-button"> Thanh toán </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,108 @@
+<div id="container">
+  <div id="content-container">
+
+    <!--  Trái: Hình ảnh sản phầm  -->
+    <div id="left-content">
+      <img [src]="detailProduct?.imageUrl" alt="{{ detailProduct?.name }}" class="product-img">
+      <div class="thumbnail-container">
+        <img [src]="detailProduct?.imageUrl" alt="Thumbnail 1" class="thumbnail-img">
+        <img [src]="detailProduct?.imageUrl" alt="Thumbnail 2" class="thumbnail-img">
+        <img [src]="detailProduct?.imageUrl" alt="Thumbnail 3" class="thumbnail-img">
+        <!-- Thêm nhiều hình nhỏ tùy ý -->
+      </div>
+    </div>
+
+    <!--  Giữa: Thông tin sản phẩm  -->
+    <div id="middle-content">
+
+      <!-- Tên sản phẩm, giá tiền -->
+      <div class="middle-content-top">
+        <!-- icon ưu đãi  -->
+        <div class="icons">
+          <span class="icon-text" style="color:#cf2222"><i class="fas fa-thumbs-up"></i> TOP DEAL tháng 8 </span>
+          &nbsp;&nbsp;&nbsp;
+          <span class="icon-text" style="color:#4646fa"><i class="fas fa-check-circle"></i> Chính hãng </span>
+          &nbsp;&nbsp;&nbsp;
+          <span class="icon-text" style="color:#e8c211"><i class="fas fa-cube"></i> Đổi trả 30 ngày </span>
+        </div>
+
+        <h2 class="name">{{ detailProduct?.name }}</h2>
+        <p class="rating">{{ detailProduct?.rating }}<i class="fas fa-star star-icon"></i>
+                                                    <i class="fas fa-star star-icon"></i>
+                                                    <i class="fas fa-star star-icon"></i>
+                                                    <i class="fas fa-star star-icon"></i>
+                                                    <i class="fas fa-star star-icon"></i>
+          (100) | Đã bán 123
+        </p>
+        <p id="price-highlight">{{ detailProduct?.price }} VND</p>
+      </div>
+
+      <!-- Vận chuyển (thêm, không dùng dữ liệu)-->
+      <div class="middle-content-mid-1">
+        <div class="address">
+          <h3>Thông tin vận chuyển</h3>
+          <p>
+            Giao đến Q.Tân Bình, Thành phố Hồ Chí Minh
+            <span style="color: #008cff; cursor: pointer; margin-left: 9em">Thay đổi</span>
+          </p>
+        </div>
+        <div class="receiving-date">
+          <i class="fa-solid fa-truck-fast"></i> Giao chủ nhật
+          <p>8h-17h, 11/8:
+            <span style="color: #00c500">Miễn phí </span>
+            <span style="text-decoration: line-through"> 23.000đ</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Thông tin chi tiết -->
+      <div class="middle-content-mid-2">
+        <h2>Thông tin chi tiết</h2>
+        <table>
+          <tr>
+            <td><strong>Tác giả:</strong> </td>
+            <td>{{ detailProduct?.author }}</td>
+          </tr>
+          <tr>
+            <td><strong>Thể loại</strong></td>
+            <td>{{ detailProduct?.category }}</td>
+          </tr>
+          <tr>
+            <td>Nhà xuất bản</td>
+            <td>{{ detailProduct?.publisher }}</td>
+          </tr>
+          <tr>
+            <td>Ngày xuất bản</td>
+            <td>{{ detailProduct?.publicationDate | date }}</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Mô tả -->
+      <div class="middle-content-mid-3">
+        <h2>Mô tả sản phẩm</h2>
+        <p class="description">{{ detailProduct?.description }}</p>
+      </div>
+    </div>
+
+    <!--  Phải: Hành động (Thêm giỏ hàng)  -->
+    <div id="right-content">
+
+      <!--Người bán-->
+      <div id="seller-info">
+        <img [src]="detailProduct?.imageUrl" alt="Seller Image" class="seller-img">
+        <div class="seller-details">
+          <p id="seller-name">{{ detailProduct?.seller }}</p>
+          <p id="rating-seller">5.0 <i class="fas fa-star star-icon"></i> (10tr lượt đánh giá)</p>
+        </div>
+      </div>
+
+      <!--Giá, button-->
+      <h2>Tổng giá sản phẩm</h2>
+      <p class="price-right">{{ detailProduct?.price }} VND</p>
+
+      <button (click)="addToCart(detailProduct!)" id="add-button">Thêm vào giỏ hàng</button>
+      <button (click)="buyNow(detailProduct!)" id="buy-button">Mua ngay</button>
+    </div>
+  </div>
+</div>

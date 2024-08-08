@@ -1,0 +1,236 @@
+//Khung to nhất chứa toàn bộ các thành phần
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: calc(100% - 80px);
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+#content-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 80%;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/*--  NHÓM HÌNH (BÊN TRÁI) --*/
+#left-content {
+  width: 25%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.04) ;
+}
+
+.product-img {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Container chứa các hình thu nhỏ */
+.thumbnail-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.thumbnail-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 3px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+
+/*--  NHÓM THÔNG TIN SẢN PHẨM (Ở GIỮA) --*/
+#middle-content {
+  width: 45%;
+  height: auto;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+
+// NHÓM ĐẦU TIÊN (Ở GIỮA)
+.middle-content-top {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.04) 0 0 5px;
+}
+
+.middle-content-top h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.middle-content-top p {
+  margin-bottom: 10px;
+  color: #4a5568;
+}
+
+.middle-content-top p strong {
+  font-weight: bold;
+  color: #2d3748;
+}
+
+//NHÓM THỨ 2
+.middle-content-mid-1 {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.04) 0 0 5px;
+}
+
+h2, h3{
+  font-weight: 600;
+}
+
+.middle-content-mid-1 .address{
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+// NHÓM THỨ 3
+.middle-content-mid-2 {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.04) 0 0 5px;
+}
+
+// NHÓM THỨ 4
+.middle-content-mid-3 {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.04) 0 0 5px;
+}
+
+#price-highlight {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #e83232;
+  margin-bottom: 16px;
+}
+
+/*-- NHÓM BÊN PHẢI (NÚT THÊM GIỎ HÀNG ...)  --*/
+#right-content {
+  width: 25%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  //justify-content: center;
+}
+
+
+/* Người bán */
+#seller-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 15px;
+  padding-top: 5px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Seller image styles */
+.seller-img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.seller-details {
+  display: flex;
+  flex-direction: column;
+}
+
+#seller-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.star-icon {
+  color: gold; /* Icon ngôi sao */
+  margin-left: 5px;
+}
+
+//Giá tiền (bên phải)
+.price-right {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e83232;
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+
+button {
+  padding: 12px 16px;
+  border-radius: 4px;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.3s;
+  width: 100%;
+}
+
+#add-button {
+  background-color: #4299e1;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+#add-button:hover {
+  background-color: #2b6cb0;
+  transform: scale(1.05);
+}
+
+#buy-button {
+  background-color: #48bb78;
+  color: #fff;
+}
+
+#buy-button:hover {
+  background-color: #38a169;
+  transform: scale(1.05);
+}

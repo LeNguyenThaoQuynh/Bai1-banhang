@@ -1,0 +1,41 @@
+<div id="container">
+  <div class="content-container">
+    <!-- Logo Section: Hiển thị logo của trang -->
+    <div class="logo">
+      <h1>SHOP</h1>
+    </div>
+    <!-- Navigation Links: Các liên kết điều hướng đến các trang khác -->
+    <nav class="navbar-nav">
+      <a [routerLink]="['/home']" class="nav-item">Trang chủ</a>
+      <a [routerLink]="['/products']" class="nav-item">Sản phẩm</a>
+      <a [routerLink]="['/about']" class="nav-item">Giới thiệu</a>
+      <a [routerLink]="['/contact']" class="nav-item">Liên hệ</a>
+    </nav>
+
+    <!-- User Profile / Login: Phần hiển thị thông tin người dùng hoặc nút đăng nhập -->
+    <div class="user-nav">
+
+      <!-- Cart Icon: Biểu tượng giỏ hàng -->
+      <a [routerLink]="['/cart']" class="cart-icon">
+        <i class="fas fa-shopping-cart"></i></a>
+
+      <!-- User Information: Hiển thị thông tin người dùng nếu đã đăng nhập -->
+      <ng-container *ngIf="currentUser$ | async as currentUser; else loginSection">
+        <div class="user">
+          <img [src]="currentUser.photoURL" alt="Profile Picture" class="profile-img">
+          <span class="user-name">{{ currentUser.displayName }}</span>
+          <a (click)="logout()" class="logout-button">
+            <i class="fas fa-sign-out-alt"></i>
+          </a>
+        </div>
+      </ng-container>
+
+      <!-- Login Section: Nút đăng nhập nếu chưa có người dùng đăng nhập -->
+      <ng-template #loginSection>
+        <button (click)="authService.login()" class="login-button">
+          <i class="fas fa-user"></i>Đăng nhập
+        </button>
+      </ng-template>
+    </div>
+  </div>
+</div>

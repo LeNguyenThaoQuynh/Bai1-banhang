@@ -1,0 +1,153 @@
+/* Căn giữa toàn bộ trang */
+.container {
+  padding: 16px;
+  background-color: #fff;
+  width: 100%;
+  height: 100vh; /* Chiếm toàn bộ chiều cao viewport để căn giữa dọc */
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* Căn giữa nội dung bên trong container */
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px; /* Đặt chiều rộng tối đa cho nội dung */
+}
+
+/* Thông báo giỏ hàng trống */
+.empty-cart-message {
+  text-align: center;
+  font-size: 1.125rem;
+  color: #4a5568;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+/* Giỏ hàng */
+.cart {
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 24px;
+  width: 100%;
+
+  max-width: 800px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+}
+
+/* Các mục giỏ hàng */
+.cart-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 16px 0;
+}
+
+/* Thông tin sản phẩm */
+.product-items {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.product-items img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-items h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.product-items p {
+  color: #718096;
+}
+
+/* Các nút hành động */
+.action-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.decrease-button,
+.increase-button,
+.remove-button {
+  background-color: #e2e8f0;
+  color: #2d3748;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.decrease-button:hover,
+.increase-button:hover {
+  background-color: #cbd5e0;
+}
+
+.remove-button {
+  background-color: #f56565;
+  color: #fff;
+}
+
+.remove-button:hover {
+  background-color: #e53e3e;
+}
+
+.action-button p {
+  font-size: 1rem; /* Kích thước chữ */
+  color: #2d3748;
+  margin: 0;
+  padding: 0 12px;
+}
+
+/* Tổng cộng */
+.total {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.total h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-right: 16px;
+}
+
+.total-number {
+  font-size: 1.25rem;
+  color: #2d3748;
+}
+
+/* Nút thanh toán */
+.checkout-button {
+  width: auto;
+  background-color: #48bb78;
+  color: #fff;
+  padding: 8px 16px; /* Giảm padding để nút nhỏ hơn */
+  border-radius: 4px;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-top: 24px;
+  font-size: 0.875rem; /* Kích thước font của nút thanh toán */
+  line-height: 1.5; /* Đảm bảo dòng chữ không bị chen chúc */
+}
+
+.checkout-button:hover {
+  background-color: #38a169;
+  transform: scale(1.05);
+}

@@ -1,0 +1,26 @@
+<h1>Danh sách sản phẩm</h1>
+<div class="container">
+  <div class="list-products">
+    <!-- Thẻ sản phẩm: Hiển thị danh sách sản phẩm -->
+    <div *ngFor="let product of storeService.products" class="product-items">
+      <div class="product-card">
+        <!-- Hình ảnh sản phẩm -->
+        <img [src]="product.imageUrl" alt="{{ product.name }}" class="w-full h-48 object-cover">
+        <div class="info">
+          <!-- Tên sản phẩm -->
+          <h2 class="name">{{ product.name }}</h2>
+          <!-- Mô tả sản phẩm -->
+          <p class="description">{{ product.description }}</p>
+          <!-- Số lượng còn lại trong kho -->
+          <p class="instock">Còn lại: {{ product.inStock }}</p>
+          <!-- Giá sản phẩm -->
+          <p class="price">{{ product.price}} VND</p>
+          <!-- Nút xem chi tiết sản phẩm -->
+          <a [routerLink]="['/product', product.id]" class="detail-button">
+            Chi tiết
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
